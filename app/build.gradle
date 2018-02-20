@@ -18,7 +18,7 @@ apply plugin: 'org.greenrobot.greendao'
 apply from: '../config/quality/quality.gradle'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 22
     buildToolsVersion '26.0.0'
 
     defaultConfig {
