@@ -19,7 +19,7 @@ import za.ac.cput.inforshare.repository.db.model.DaoMaster;
 import za.ac.cput.inforshare.repository.db.model.DaoSession;
 import za.ac.cput.inforshare.repository.db.model.Option;
 import za.ac.cput.inforshare.repository.db.model.Question;
-import za.ac.cput.inforshare.repository.db.model.User;
+import za.ac.cput.inforshare.repository.db.model.users.User;
 
 import java.util.List;
 import java.util.concurrent.Callable;

@@ -115,10 +115,7 @@ public class LoginRequest {
 
             GoogleLoginRequest that = (GoogleLoginRequest) object;
 
-            if (googleUserId != null ? !googleUserId.equals(that.googleUserId)
-                    : that.googleUserId != null)
-                return false;
-            return idToken != null ? idToken.equals(that.idToken) : that.idToken == null;
+            return (googleUserId != null ? googleUserId.equals(that.googleUserId) : that.googleUserId == null) && (idToken != null ? idToken.equals(that.idToken) : that.idToken == null);
 
         }
 

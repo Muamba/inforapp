@@ -25,7 +25,7 @@ import com.google.gson.reflect.TypeToken;
 import za.ac.cput.inforshare.repository.db.DbHelper;
 import za.ac.cput.inforshare.repository.db.model.Option;
 import za.ac.cput.inforshare.repository.db.model.Question;
-import za.ac.cput.inforshare.repository.db.model.User;
+import za.ac.cput.inforshare.repository.db.model.users.User;
 import za.ac.cput.inforshare.repository.network.ApiHeader;
 import za.ac.cput.inforshare.repository.network.ApiHelper;
 import za.ac.cput.inforshare.repository.network.model.BlogResponse;

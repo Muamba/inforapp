@@ -48,7 +48,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/light_gray" />
+                    android:background="@color/i_logo_blue_dark_1" />
 
             </android.support.design.widget.AppBarLayout>
 

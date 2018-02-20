@@ -26,7 +26,7 @@ import za.ac.cput.inforshare.ui.base.MvpPresenter;
 @PerActivity
 public interface LoginMvpPresenter<V extends LoginMvpView> extends MvpPresenter<V> {
 
-    void onServerLoginClick(String email,String institution, String password);
+    void onServerLoginClick(String email, String password);
 
 
 

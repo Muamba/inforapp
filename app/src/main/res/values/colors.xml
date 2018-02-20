@@ -72,6 +72,6 @@
     <color name="i_btn_green_main">#91b23c</color>         <!--Buttons-->
     <color name="i_bg_green_light_1">#E8F5C7</color>      <!--Background-->
     <color name="i_hdr_green_light_2">#C7E283</color>       <!--Headers, footers-->
-    <color name="green_dark_1">#6E9015</color>
+    <color name="green_dark_1">#6e9015</color>
     <color name="green_dark_2">#486400</color>
 </resources>

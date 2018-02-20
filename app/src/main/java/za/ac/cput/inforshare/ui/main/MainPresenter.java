@@ -159,8 +159,8 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
     }
 
     @Override
-    public void onDrawerMyFeedClick() {
-        getMvpView().closeNavigationDrawer();
+    public void onDefaultLoad() {
+     //   getMvpView().closeNavigationDrawer();
         getMvpView().openMyFeedActivity();
     }
 }

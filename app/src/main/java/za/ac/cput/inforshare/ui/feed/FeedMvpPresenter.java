@@ -18,10 +18,17 @@ package za.ac.cput.inforshare.ui.feed;
 import za.ac.cput.inforshare.ui.base.MvpPresenter;
 import za.ac.cput.inforshare.ui.base.MvpView;
 
-/**
- * Created by janisharali on 25/05/17.
- */
+
 
 public interface FeedMvpPresenter<V extends MvpView> extends MvpPresenter<V> {
 
+    void onDrawerOptionAboutClick();
+
+    void onFabComposeClick();
+
+    void onDrawerOptionLogoutClick();
+
+    void onViewInitialized();
+
+    void onNavMenuCreated();
 }

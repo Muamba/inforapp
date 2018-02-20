@@ -46,7 +46,7 @@ public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V>
     }
 
     @Override
-    public void onServerLoginClick(String email,String institution, String password) {
+    public void onServerLoginClick(final String email, String password) {
         //validate email and password
         if (email == null || email.isEmpty()) {
             getMvpView().onError(R.string.empty_email);
@@ -73,8 +73,8 @@ public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V>
                                 response.getAccessToken(),
                                 response.getUserId(),
                                 DataManager.LoggedInMode.LOGGED_IN_MODE_SERVER,
-                                response.getUserName(),
-                                response.getUserEmail(),
+                                "Test User",
+                                email,
                                 response.getGoogleProfilePicUrl());
 
                         if (!isViewAttached()) {

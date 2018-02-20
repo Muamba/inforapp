@@ -31,7 +31,8 @@
     <!--Drawer Menus-->
     <string name="about">About Infoshare</string>
     <string name="logout">Logout</string>
-    <string name="feed">My Stories</string>
+    <string name="read_stories">Stories</string>
+    <string name="profile">My Profile</string>
 
     <!--App Message-->
     <string name="api_retry_error">Please retry!</string>
@@ -52,7 +53,7 @@
     <string name="empty_password">Please provide a non empty password.</string>
 
     <!--about fragment-->
-    <string name="project_info">This sample app implements MVP architecture using Dagger2, GreenDao, RxJava, FastAndroidNetworking and PlaceholderView</string>
+    <string name="project_info">This sample infoshare App for testing</string>
     <string name="link_mvp_blog">1. https://blog.mindorks.com</string>
     <string name="link_mvp_repo">2. https://github.com/MindorksOpenSource/android-mvp-architecture</string>
     <string name="link_mindorks_blog">3. https://blog.mindorks.com</string>
@@ -77,13 +78,14 @@
     <string name="submit">Submit</string>
 
     <!--feed-->
-    <string name="title">My Feed</string>
-    <string name="open_source">Open Source</string>
-    <string name="blog">Blog</string>
+    <string name="title">Stories</string>
+    <string name="my_submission">My Stories</string>
+    <string name="stories">Read Stories</string>
 
     <!--empty state-->
     <string name="empty_screen">We do not have anything\nhere right now.</string>
     <string name="please_retry">Please Retry</string>
     <string name="retry">Retry</string>
+    <string name="title_activity__profile">Activity_Profile</string>
 
 </resources>

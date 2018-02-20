@@ -15,6 +15,9 @@
 
 package za.ac.cput.inforshare.ui.feed;
 
+import java.util.List;
+
+import za.ac.cput.inforshare.repository.db.model.Question;
 import za.ac.cput.inforshare.ui.base.MvpView;
 
 /**
@@ -22,4 +25,23 @@ import za.ac.cput.inforshare.ui.base.MvpView;
  */
 
 public interface FeedMvpView extends MvpView {
+    void openLoginActivity();
+    void openProfileActivity();
+
+    void showAboutFragment();
+
+    void updateUserName(String currentUserName);
+
+    void updateUserEmail(String currentUserEmail);
+
+    void updateUserProfilePic(String currentUserProfilePicUrl);
+
+    void updateAppVersion();
+
+    void closeNavigationDrawer();
+
+    void lockDrawer();
+
+    void unlockDrawer();
+
 }

@@ -19,7 +19,7 @@ apply from: '../config/quality/quality.gradle'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '26.0.0'
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         applicationId "za.ac.cput.inforshare"
@@ -75,6 +75,7 @@ dependencies {
     implementation "org.greenrobot:greendao:$rootProject.greenDaoVersion"
 
     // debug database
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     debugImplementation "com.amitshekhar.android:debug-db:$rootProject.debugDBVersion"
 
     // dependency injection

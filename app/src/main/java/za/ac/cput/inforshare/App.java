@@ -18,16 +18,17 @@ package za.ac.cput.inforshare;
 import android.app.Application;
 
 import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.BuildConfig;
 import com.androidnetworking.interceptors.HttpLoggingInterceptor.Level;
-import za.ac.cput.inforshare.repository.DataManager;
-import za.ac.cput.inforshare.di.component.ApplicationComponent;
-import za.ac.cput.inforshare.di.component.DaggerApplicationComponent;
-import za.ac.cput.inforshare.di.module.ApplicationModule;
-import za.ac.cput.inforshare.utils.AppLogger;
 
 import javax.inject.Inject;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import za.ac.cput.inforshare.di.component.ApplicationComponent;
+import za.ac.cput.inforshare.di.component.DaggerApplicationComponent;
+import za.ac.cput.inforshare.di.module.ApplicationModule;
+import za.ac.cput.inforshare.repository.DataManager;
+import za.ac.cput.inforshare.utils.AppLogger;
 
 
 /**

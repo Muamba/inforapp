@@ -9,5 +9,6 @@ build
 /captures
 .externalNativeBuild
 /projectFilesBackup
+/app/build/
 app/build/
 

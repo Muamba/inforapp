@@ -15,7 +15,14 @@
 
 package za.ac.cput.inforshare.ui.feed;
 
+import com.androidnetworking.error.ANError;
+
+import java.util.List;
+
+import io.reactivex.functions.Consumer;
 import za.ac.cput.inforshare.repository.DataManager;
+import za.ac.cput.inforshare.repository.db.model.Question;
+import za.ac.cput.inforshare.repository.network.model.LogoutResponse;
 import za.ac.cput.inforshare.ui.base.BasePresenter;
 import za.ac.cput.inforshare.ui.base.MvpView;
 import za.ac.cput.inforshare.utils.rx.SchedulerProvider;
@@ -28,7 +35,7 @@ import io.reactivex.disposables.CompositeDisposable;
  * Created by janisharali on 25/05/17.
  */
 
-public class FeedPresenter<V extends MvpView> extends BasePresenter<V> implements
+public class FeedPresenter<V extends FeedMvpView> extends BasePresenter<V> implements
         FeedMvpPresenter<V> {
 
     private static final String TAG = "FeedPresenter";
@@ -38,5 +45,84 @@ public class FeedPresenter<V extends MvpView> extends BasePresenter<V> implement
                          SchedulerProvider schedulerProvider,
                          CompositeDisposable compositeDisposable) {
         super(dataManager, schedulerProvider, compositeDisposable);
+    }
+
+    @Override
+    public void onDrawerOptionAboutClick() {
+
+    }
+
+    @Override
+    public void onDrawerOptionLogoutClick() {
+        getMvpView().showLoading();
+
+        getCompositeDisposable().add(getDataManager().doLogoutApiCall()
+                .subscribeOn(getSchedulerProvider().io())
+                .observeOn(getSchedulerProvider().ui())
+                .subscribe(new Consumer<LogoutResponse>() {
+                    @Override
+                    public void accept(LogoutResponse response) throws Exception {
+                        if (!isViewAttached()) {
+                            return;
+                        }
+
+                        getDataManager().setUserAsLoggedOut();
+                        getMvpView().hideLoading();
+                        getMvpView().openLoginActivity();
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
+                        if (!isViewAttached()) {
+                            return;
+                        }
+
+                        getMvpView().hideLoading();
+
+                        // handle the login error here
+                        if (throwable instanceof ANError) {
+                            ANError anError = (ANError) throwable;
+                            handleApiError(anError);
+                        }
+                    }
+                }));
+    }
+
+
+
+
+    @Override
+    public void onViewInitialized() {
+
+    }
+
+    @Override
+    public void onFabComposeClick(){
+        getMvpView().closeNavigationDrawer();
+        getMvpView().openProfileActivity();
+    }
+
+    @Override
+    public void onNavMenuCreated() {
+        if (!isViewAttached()) {
+            return;
+        }
+        getMvpView().updateAppVersion();
+
+        final String currentUserName = getDataManager().getCurrentUserName();
+        if (currentUserName != null && !currentUserName.isEmpty()) {
+            getMvpView().updateUserName(currentUserName);
+        }
+
+        final String currentUserEmail = getDataManager().getCurrentUserEmail();
+        if (currentUserEmail != null && !currentUserEmail.isEmpty()) {
+            getMvpView().updateUserEmail(currentUserEmail);
+        }
+
+        final String profilePicUrl = getDataManager().getCurrentUserProfilePicUrl();
+        if (profilePicUrl != null && !profilePicUrl.isEmpty()) {
+            getMvpView().updateUserProfilePic(profilePicUrl);
+        }
+
     }
 }

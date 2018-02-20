@@ -74,20 +74,29 @@
 
             </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+
+            <TextView
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/gray"
-                app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:text="@string/institution" />
 
-                <Spinner
-                    android:id="@+id/spn_institution"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:visibility="invisible" />
+            <Spinner
+                android:id="@+id/spn_institution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center|left|bottom"
+                android:hint="@string/institution"
+                android:spinnerMode="dialog"
+                android:visibility="visible" />
 
-            </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"

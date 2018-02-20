@@ -17,7 +17,7 @@ package za.ac.cput.inforshare.repository.db;
 
 import za.ac.cput.inforshare.repository.db.model.Option;
 import za.ac.cput.inforshare.repository.db.model.Question;
-import za.ac.cput.inforshare.repository.db.model.User;
+import za.ac.cput.inforshare.repository.db.model.users.User;
 
 import java.util.List;
 
