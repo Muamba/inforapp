@@ -29,7 +29,7 @@ import java.time.LocalDateTime;
         @Property(nameInDb = "date")
         private LocalDateTime date;
 
-        public Subject (String siteId,String subjectId, String name,LocalDateTime date  ) {
+        public Subject (String siteId,String subjectId, String name, String url,LocalDateTime date  ) {
 
             this.siteId = siteId;
             this.subjectId = subjectId;

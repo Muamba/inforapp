@@ -40,6 +40,7 @@ import com.mindorks.placeholderview.SwipePlaceHolderView;
 
 import za.ac.cput.inforshare.BuildConfig;
 import za.ac.cput.inforshare.R;
+import za.ac.cput.inforshare.ui.about.AboutFragment;
 import za.ac.cput.inforshare.ui.base.BaseActivity;
 
 import javax.inject.Inject;
@@ -48,6 +49,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import za.ac.cput.inforshare.ui.custom.RoundedImageView;
 import za.ac.cput.inforshare.ui.login.LoginActivity;
+import za.ac.cput.inforshare.ui.main.MainActivity;
+import za.ac.cput.inforshare.ui.profile.Activity_Profile;
 
 
 public class FeedActivity extends BaseActivity implements FeedMvpView {
@@ -146,7 +149,8 @@ public class FeedActivity extends BaseActivity implements FeedMvpView {
         mFabCompose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Compose new Story",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Compose a new Story",Toast.LENGTH_LONG).show();
+                mPresenter.onFabComposeClick();
             }
         });
         mDrawerToggle = new ActionBarDrawerToggle(
@@ -173,30 +177,17 @@ public class FeedActivity extends BaseActivity implements FeedMvpView {
         mPresenter.onViewInitialized();
     }
 
-   /* @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            // Respond to the action bar's Up/Home button
-            case android.R.id.home:
-                Intent upIntent = NavUtils.getParentActivityIntent(this);
-                upIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                if (NavUtils.shouldUpRecreateTask(this, upIntent)) {
-                    // This activity is NOT part of this app's task, so create a new task
-                    // when navigating up, with a synthesized back stack.
-                    TaskStackBuilder.create(this)
-                            // Add all of this activity's parents to the back stack
-                            .addNextIntentWithParentStack(upIntent)
-                            // Navigate up to the closest parent
-                            .startActivities();
-                } else {
-                    // This activity is part of this app's task, so simply
-                    // navigate up to the logical parent activity.
-                    NavUtils.navigateUpTo(this, upIntent);
-                }
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }*/
+
+
+   @Override
+   public void openProfileActivity(){
+     //  startActivity(Activity_Profile.getStartIntent(this));
+   }
+
+    @Override
+    public void showAboutFragment() {
+
+    }
 
     @Override
     protected void onDestroy() {
@@ -210,10 +201,7 @@ public class FeedActivity extends BaseActivity implements FeedMvpView {
         finish();
     }
 
-    @Override
-    public void showAboutFragment() {
 
-    }
 
     @Override
     public void updateUserName(String currentUserName) {
@@ -274,11 +262,14 @@ public class FeedActivity extends BaseActivity implements FeedMvpView {
 
     @Override
     public void lockDrawer() {
-
+        if (mDrawer != null)
+            mDrawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
     }
 
     @Override
     public void unlockDrawer() {
-
+        if (mDrawer != null)
+            mDrawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
     }
+
 }

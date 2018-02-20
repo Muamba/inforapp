@@ -26,6 +26,7 @@ import za.ac.cput.inforshare.ui.base.MvpView;
 
 public interface FeedMvpView extends MvpView {
     void openLoginActivity();
+    void openProfileActivity();
 
     void showAboutFragment();
 

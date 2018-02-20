@@ -88,15 +88,8 @@ public class FeedPresenter<V extends FeedMvpView> extends BasePresenter<V> imple
                 }));
     }
 
-    @Override
-    public void onDrawerRateUsClick() {
 
-    }
 
-    @Override
-    public void onDefaultLoad() {
-
-    }
 
     @Override
     public void onViewInitialized() {
@@ -104,8 +97,9 @@ public class FeedPresenter<V extends FeedMvpView> extends BasePresenter<V> imple
     }
 
     @Override
-    public void onCardExhausted() {
-
+    public void onFabComposeClick(){
+        getMvpView().closeNavigationDrawer();
+        getMvpView().openProfileActivity();
     }
 
     @Override
